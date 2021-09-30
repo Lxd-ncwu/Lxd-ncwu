@@ -1,0 +1,74 @@
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p id="click">我歌月徘徊，我舞影零乱</p>
+
+        <table id="color" border="1" width="300px" align="center" style="float: left">
+            <tbody><tr align="center" class="tr_color" style="background-color: white;">
+                <td>201820114李晓东</td>
+                <td>18</td>
+            </tr>
+            <tr align="center" class="tr_color" style="background-color: yellow;">
+                <td>201820114李晓东</td>
+                <td>18</td>
+            </tr>
+            <tr align="center" class="tr_color" style="background-color: red;">
+                <td>201820114李晓东</td>
+                <td>18</td>
+            </tr>
+            <tr align="center" class="tr_color" style="background-color: blue;">
+                <td>201820114李晓东</td>
+                <td>18</td>
+            </tr>
+        </tbody></table>
+<br>
+        <div>
+        <input type="checkbox" name="hobby" value="code">敲代码<br>
+        <input type="checkbox" name="hobby" value="game">打游戏<br>
+        <input type="checkbox" name="hobby" value="book">看小说<br>
+        <button id="check">检查</button>
+        </div>
+
+        <script>
+            var click_p = document.getElementById("click");
+            click_p.onclick = function () {
+                alert("李白");
+            }
+
+            var elementsByClassName = document.getElementsByClassName("tr_color");
+            for (var i = 0; i < elementsByClassName.length; i++) {
+                if (i % 2 == 1) {
+                    elementsByClassName[i].style.backgroundColor = "yellow";
+                    elementsByClassName[i].onmouseover = function () {
+                        this.style.backgroundColor = "red";
+                    }
+                    elementsByClassName[i].onmouseout = function () {
+                        this.style.backgroundColor = "yellow";
+                    }
+                } else {
+                    elementsByClassName[i].style.backgroundColor = "green";
+                    elementsByClassName[i].onmouseover = function () {
+                        this.style.backgroundColor = "red";
+                    }
+                    elementsByClassName[i].onmouseout = function () {
+                        this.style.backgroundColor = "green";
+                    }
+                }
+            }
+
+            var check_btn = document.getElementById("check");
+            check_btn.onclick = function () {
+                var count = 0;
+                var elementsByName = document.getElementsByName("hobby");
+                for (var i = 0; i < elementsByName.length; i++) {
+                    if (elementsByName[i].checked){
+                        count++;
+                    }
+                }
+                alert("数量为"+count);
+            }
+        </script>
+    
+</body></html>
